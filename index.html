@@ -5,6 +5,7 @@
 <title>Day's Website</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 <style>
+
     body {
         background: rgb(252, 252, 252);
     } #page {
@@ -14,7 +15,6 @@
     } h1 {
         font: 36pt/1.0em 'Inter';
         text-align: left;
-        // padding-top: 36px;
         margin-bottom: 48px;
     } h2 {
         font: 24pt/1.0em 'Inter';
@@ -27,45 +27,120 @@
         margin: 24px auto;
         color: rgb(100, 100, 100);
     } img {
-        width: 50%;
-        object-fit: fill;
-        float: right;
-        margin: 0px 0px 36px 36px;
-        border-radius: 14px;
+        border-radius: 12px;
         box-shadow:
         0 1px 1px hsl(0deg 0% 0% / 0.075),
         0 2px 2px hsl(0deg 0% 0% / 0.075),
         0 4px 4px hsl(0deg 0% 0% / 0.075),
         0 8px 8px hsl(0deg 0% 0% / 0.075),
         0 16px 16px hsl(0deg 0% 0% / 0.075),
+    } .portrait {
+        width: 50%;
+        object-fit: fill;
+        float: right;
+        margin: 0px 0px 36px 36px;
     } video {
         width: 75%;
         display: block;
         margin: 36px auto 0 auto;
+    } .grid {
+        width: 100%;
+        height: 248px;
+        object-fit: cover;
+    } figure {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin: 48px 0;
+    } figure div {
+        flex: 1 1 248px;
+        min-width: 248px;
+    } figcaption {
+        font: 12pt/1.6em Inter;
+        color: rgb(140, 140, 140);
+        padding: 8px 0;
+    } img, .zoom {
+        transition: transform 0.5s;
+    } .zoom {
+        background: url("thumb-tulip.jpg");
+        background-size: 100%;
+        background-position: center;
+    } img:hover {
+        transform: scale(1.03);
+        transition: transform 0.5s;
+    } .zoom:hover {
+        background-size: 105%;
+        transition: background-size 0.5s;
     }
+    
 </style>
 </head>
 
 <body>
 <div id="page">
+
 <video autoplay loop muted>
         <source src="video.mp4" type="video/mp4">
       Your browser does not support the video tag.
 </video>
-<h1>Hi, I'm <b>Day.</b></h1>
+
+<h1>Hi, I'm <b>Day</b></h1>
 <p>
-    <img src="https://live.staticflickr.com/65535/54438995862_b13df2f6bf_c_d.jpg"/>
-    A graphic designer and multidisciplinary visual artist based in Las Vegas, Nevada. Each project I take on gets my full attention, whether you need a brand refresh, website or unique graphics and animations to help tell your story. I have over eight years of personal experience in creating...
+    <img src="https://live.staticflickr.com/65535/54438995862_b13df2f6bf_c_d.jpg" class="portrait"/>
+    A designer and multidisciplinary visual artist from Las Vegas. I make stuff that looks good and works good. I have over eight years of personal experience in creating...
 </p>
 <p>
-    Comprehensive branding solutions including logo design, typography, and style guidelines to make your brand instantly recognizable.
+    Fire visuals, including graphics and animations that people'll definitely remember.
 </p>
 <p>
-    Creative graphics, animations, and visuals designed to leave a lasting impression.
+    Brand identities with custom logos, type and guidelines so your company is consistent plus recognizable.
+</p>
+<p>
+    Oh, and I design sites and apps, for companies, small businesses or anybody.
 </p>
 <p>
     Let's get in touch at <a href="mailto:munard1@unlv.nevada.edu">munard1@unlv.nevada.edu.</a>
 </p>
+
+<figure>
+    <div>
+    <a href="https://live.staticflickr.com/65535/54448088140_4b9e13c179_b.jpg">
+    <img src="https://live.staticflickr.com/65535/54448088140_4b9e13c179.jpg" class="grid" />
+    </a>
+    <figcaption>
+        Corporate Website Redesign
+    </figcaption>
+    </div>
+
+    <div>
+    <a href="https://live.staticflickr.com/65535/54438718382_c1524bda7c_b.jpg">
+    <img src="https://live.staticflickr.com/65535/54438718382_c1524bda7c.jpg" class="grid" />
+    </a>
+    <figcaption>
+        McDonald's C.P.F.M Mystery Box
+    </figcaption>
+    </div>
+
+    <div>
+    <a href="https://live.staticflickr.com/65535/54439898315_85735e7237_b.jpg">
+    <img src="https://live.staticflickr.com/65535/54439898315_85735e7237.jpg" class="grid" />
+    </a>
+    <figcaption>
+        Tesla Annual Report
+    </figcaption>
+    </div>
+
+    <div>
+    <a href="https://live.staticflickr.com/65535/54439572831_88722639d8_b.jpg">
+    <img src="https://live.staticflickr.com/65535/54439572831_88722639d8_b.jpg" class="grid" />
+    </a>
+    <figcaption>
+        The Cosmopolitan Billboard
+    </figcaption>
+    </div>
+</figure>
+
 </div>
 </body>
 </html>
