@@ -12,6 +12,37 @@
         width: 50%;
         background: rgb(252, 252, 252);
         margin: 0 auto;
+    } .button-container {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin: 32px 0;
+    } button {
+        border: none;
+        border-radius: 12px;
+        font: 15pt/1.6em Inter;
+        padding: 12px 24px;
+        margin: 0;
+        color: rgb(50, 50, 50);
+        background: rgb(245, 245, 245);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow:
+        0 1px 1px hsl(0deg 0% 0% / 0.075),
+        0 2px 2px hsl(0deg 0% 0% / 0.075),
+        0 4px 4px hsl(0deg 0% 0% / 0.075),
+        0 8px 8px hsl(0deg 0% 0% / 0.075),
+        0 16px 16px hsl(0deg 0% 0% / 0.075),
+    } button:hover {
+        background: rgb(235, 235, 235);
+        transform: scale(1.03);
+        transition: transform 0.5s;
+        box-shadow:
+        0 1px 1px hsl(0deg 0% 0% / 0.075),
+        0 2px 2px hsl(0deg 0% 0% / 0.075),
+        0 4px 4px hsl(0deg 0% 0% / 0.075),
+        0 8px 8px hsl(0deg 0% 0% / 0.075),
+        0 16px 16px hsl(0deg 0% 0% / 0.075),
     } h1 {
         font: 36pt/1.0em 'Inter';
         text-align: left;
@@ -63,7 +94,6 @@
     } img, .zoom {
         transition: transform 0.5s;
     } .zoom {
-        background: url("thumb-tulip.jpg");
         background-size: 100%;
         background-position: center;
     } img:hover {
@@ -82,8 +112,12 @@
 
 <video autoplay loop muted>
         <source src="video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
 </video>
+
+<div class="button-container">
+    <a href="index.html"><button>Home</button></a>
+    <a href="contact.html"><button>Contact Me</button></a>
+</div>
 
 <h1>Hi, I'm <b>Day</b></h1>
 <p>

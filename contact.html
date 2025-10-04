@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Contact - Day's Website</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<style>
+
+    body {
+        background: rgb(252, 252, 252);
+    } #page {
+        width: 50%;
+        background: rgb(252, 252, 252);
+        margin: 0 auto;
+    } .button-container {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin: 32px 0;
+    } button {
+        border: none;
+        border-radius: 12px;
+        font: 15pt/1.6em Inter;
+        padding: 12px 24px;
+        margin: 0;
+        color: rgb(50, 50, 50);
+        background: rgb(245, 245, 245);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow:
+        0 1px 1px hsl(0deg 0% 0% / 0.075),
+        0 2px 2px hsl(0deg 0% 0% / 0.075),
+        0 4px 4px hsl(0deg 0% 0% / 0.075),
+        0 8px 8px hsl(0deg 0% 0% / 0.075),
+        0 16px 16px hsl(0deg 0% 0% / 0.075),
+    } button:hover {
+        background: rgb(235, 235, 235);
+        transform: scale(1.03);
+        transition: transform 0.5s;
+        box-shadow:
+        0 1px 1px hsl(0deg 0% 0% / 0.075),
+        0 2px 2px hsl(0deg 0% 0% / 0.075),
+        0 4px 4px hsl(0deg 0% 0% / 0.075),
+        0 8px 8px hsl(0deg 0% 0% / 0.075),
+        0 16px 16px hsl(0deg 0% 0% / 0.075),
+    } h1 {
+        font: 36pt/1.0em 'Inter';
+        text-align: left;
+        margin-bottom: 48px;
+    } p {
+        font: 15pt/1.6em Inter;
+        margin: 24px auto;
+        color: rgb(100, 100, 100);
+    } video {
+        width: 75%;
+        display: block;
+        margin: 36px auto 0 auto;
+    } table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 24px 0 132px 0;
+    } td {
+        padding: 12px 12px;
+        font: 15pt/1.6em Inter;
+        color: rgb(100, 100, 100);
+        border-radius: 12px;
+        padding: 16px 24px;
+    } td:first-child {
+        font-weight: 600;
+        color: rgb(50, 50, 50);
+        width: 30%;
+    } tr:first-child td:first-child {
+        background: rgb(245, 245, 245);
+    } tr:first-child td:last-child {
+        background: rgb(245, 245, 245);
+    } tr:last-child td:first-child {
+        background: rgb(245, 245, 245);
+    } tr:last-child td:last-child {
+        background: rgb(245, 245, 245);
+    }
+    
+</style>
+</head>
+
+<body>
+<div id="page">
+
+<video autoplay loop muted>
+        <source src="video.mp4" type="video/mp4">
+</video>
+
+<div class="button-container">
+    <a href="index.html"><button>Home</button></a>
+    <a href="contact.html"><button>Contact Me</button></a>
+</div>
+
+<h1>Get In <b>Touch</b></h1>
+
+<table>
+    <tr>
+        <td>Email</td>
+        <td><a href="mailto:munard1@unlv.nevada.edu">munard1@unlv.nevada.edu</a></td>
+    </tr>
+    <tr>
+        <td>Phone</td>
+        <td>(555) 555-5555</td>
+    </tr>
+    <tr>
+        <td>Instagram</td>
+        <td><a href="https://instagram.com/goinhomeclub" target="_blank">@goinhomeclub</a></td>
+    </tr>
+</table>
+
+</div>
+</body>
+</html>
