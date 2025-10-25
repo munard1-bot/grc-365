@@ -10,6 +10,7 @@
         background: rgb(252, 252, 252);
     } #page {
         width: 50%;
+        max-width: 100%;
         background: rgb(252, 252, 252);
         margin: 0 auto;
     } .button-container {
@@ -102,6 +103,44 @@
     } .zoom:hover {
         background-size: 105%;
         transition: background-size 0.5s;
+    }
+    
+    @media (max-width: 750px) {
+        #page {
+            width: 100%;
+            padding: 0 20px;
+        }
+        
+        h1 {
+            font-size: 28pt;
+        }
+        
+        h2 {
+            font-size: 20pt;
+        }
+        
+        p {
+            font-size: 16pt;
+        }
+        
+        .portrait {
+            width: 100%;
+            float: none;
+            margin: 0 0 24px 0;
+        }
+        
+        video {
+            width: 100%;
+        }
+        
+        .grid {
+            width: 100%;
+        }
+        
+        figure div {
+            flex: 1 1 100%;
+            min-width: 100%;
+        }
     }
     
 </style>
