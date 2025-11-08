@@ -103,6 +103,17 @@
     } .zoom:hover {
         background-size: 105%;
         transition: background-size 0.5s;
+    } @keyframes pulse {
+        0% {
+            transform: scale(1) rotate(-2deg);
+        } 50% {
+            transform: scale(1.05) rotate(2deg);
+        } 100% {
+            transform: scale(1) rotate(-2deg);
+        }
+    } .get-in-touch {
+        background: #cddafd;
+        animation: pulse 2s ease infinite;
     }
     
     @media (max-width: 750px) {
@@ -177,6 +188,10 @@
 <p>
     Let's get in touch at <a href="mailto:munard1@unlv.nevada.edu">munard1@unlv.nevada.edu.</a>
 </p>
+
+<div style="text-align: left; margin: 32px 0;">
+    <a href="contact.html"><button class="get-in-touch">Get in Touch</button></a>
+</div>
 
 <figure>
     <div>
