@@ -103,6 +103,9 @@
         padding: 24px;
         text-align: center;
         max-width: 80%;
+    } .active-button {
+        background: rgb(220, 220, 220);
+    }
     
 </style>
 </head>
@@ -137,6 +140,18 @@
         <div style="font: 18pt/1.4em 'Nunito'; font-weight: 700; color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);">In a field one summer's day a Grasshopper was hopping about, chirping and singing to its heart's content.</div>
     </div>
 </div>
+
+<script>
+    var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    var buttons = document.querySelectorAll('.button-container a');
+    
+    for (var i = 0; i < buttons.length; i++) {
+        var href = buttons[i].getAttribute('href');
+        if (href === currentPage) {
+            buttons[i].querySelector('button').classList.add('active-button');
+        }
+    }
+</script>
 
 </div>
 </body>

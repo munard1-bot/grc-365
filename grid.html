@@ -84,6 +84,31 @@
         grid-area: 2 / 2 / 3 / 3;
     } .landscape4 {
         grid-area: 2 / 3 / 3 / 4;
+    } .active-button {
+        background: rgb(220, 220, 220);
+    } .lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+    } .lightbox img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 12px;
+    } .lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
     }
     
 </style>
@@ -108,12 +133,44 @@
 <p>Photography by Ryoji Iwata, Masahiro Miyagi, Yan Berthemy, Beatriz Kim, 13on.</p>
 
 <div class="photo-grid">
-    <img src="https://images.unsplash.com/photo-1517586979036-b7d1e86b3345?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=688" class="portrait1"/>
-    <img src="https://images.unsplash.com/photo-1625921765718-40e14ee8641c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1176" class="landscape1" alt="Mountain landscape" />
-    <img src="https://images.unsplash.com/photo-1577040422565-7504e63b107f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074" class="landscape2" alt="Forest landscape" />
-    <img src="https://images.unsplash.com/photo-1638155195860-404746d8a077?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170" class="landscape3" alt="Ocean landscape" />
-    <img src="https://images.unsplash.com/photo-1522897048979-e407743f3603?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1171" class="landscape4" alt="City landscape" />
+    <img src="https://images.unsplash.com/photo-1517586979036-b7d1e86b3345?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=688" class="portrait1" onclick="openLightbox(this.src)"/>
+    <img src="https://images.unsplash.com/photo-1625921765718-40e14ee8641c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1176" class="landscape1" alt="Mountain landscape" onclick="openLightbox(this.src)" />
+    <img src="https://images.unsplash.com/photo-1577040422565-7504e63b107f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074" class="landscape2" alt="Forest landscape" onclick="openLightbox(this.src)" />
+    <img src="https://images.unsplash.com/photo-1638155195860-404746d8a077?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170" class="landscape3" alt="Ocean landscape" onclick="openLightbox(this.src)" />
+    <img src="https://images.unsplash.com/photo-1522897048979-e407743f3603?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1171" class="landscape4" alt="City landscape" onclick="openLightbox(this.src)" />
 </div>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+    var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    var buttons = document.querySelectorAll('.button-container a');
+    
+    for (var i = 0; i < buttons.length; i++) {
+        var href = buttons[i].getAttribute('href');
+        if (href === currentPage) {
+            buttons[i].querySelector('button').classList.add('active-button');
+        }
+    }
+    
+    function openLightbox(imgSrc) {
+        document.getElementById('lightbox-img').src = imgSrc;
+        document.getElementById('lightbox').style.display = 'flex';
+    }
+    
+    function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+    }
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeLightbox();
+        }
+    });
+</script>
 
 </div>
 </body>
