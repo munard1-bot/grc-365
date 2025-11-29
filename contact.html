@@ -2,51 +2,61 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.75">
 <title>Contact - Day's Website</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 <style>
 
     body {
         background: rgb(252, 252, 252);
+        margin: 0;
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     } #page {
-        width: 50%;
+        width: 70%;
+        max-width: 1120px;
         background: rgb(252, 252, 252);
         margin: 0 auto;
-    } .button-container {
-        display: flex;
-        justify-content: center;
-        gap: 16px;
-        margin: 32px 0;
+        padding: 0 40px 80px 40px;
+    } .nav-links {
+        display: inline-flex;
+        gap: 32px;
+        font: 11pt/1.4em Inter;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+    } .nav-links a {
+        text-decoration: none;
+        color: rgb(90, 90, 90);
+        padding-bottom: 4px;
+        border-bottom: 2px solid transparent;
+    } .nav-links a:hover {
+        border-bottom: 2px solid rgb(210, 210, 210);
+    } .active-link {
+        border-bottom: 2px solid rgb(210, 210, 210);
+    } header {
+        padding: 32px 0 64px 0;
+        text-align: center;
+        margin: 0;
     } button {
         border: none;
-        border-radius: 12px;
-        font: 15pt/1.6em Inter;
-        padding: 12px 24px;
+        border-radius: 8px;
+        font: 13pt/1.4em Inter;
+        padding: 10px 24px;
         margin: 0;
         color: rgb(50, 50, 50);
         background: rgb(245, 245, 245);
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: all 0.25s ease;
         box-shadow:
-        0 1px 1px hsl(0deg 0% 0% / 0.075),
-        0 2px 2px hsl(0deg 0% 0% / 0.075),
-        0 4px 4px hsl(0deg 0% 0% / 0.075),
-        0 8px 8px hsl(0deg 0% 0% / 0.075),
-        0 16px 16px hsl(0deg 0% 0% / 0.075),
+        0 1px 1px hsl(0deg 0% 0% / 0.04),
+        0 2px 2px hsl(0deg 0% 0% / 0.04),
+        0 4px 4px hsl(0deg 0% 0% / 0.04);
     } button:hover {
         background: rgb(235, 235, 235);
-        transform: scale(1.03);
-        transition: transform 0.5s;
-        box-shadow:
-        0 1px 1px hsl(0deg 0% 0% / 0.075),
-        0 2px 2px hsl(0deg 0% 0% / 0.075),
-        0 4px 4px hsl(0deg 0% 0% / 0.075),
-        0 8px 8px hsl(0deg 0% 0% / 0.075),
-        0 16px 16px hsl(0deg 0% 0% / 0.075),
+        transform: translateY(-1px);
     } h1 {
         font: 36pt/1.0em 'Inter';
         text-align: left;
-        margin-bottom: 48px;
+        margin: 0 0 48px 0;
     } h2 {
         font: 24pt/1.0em 'Inter';
         text-align: left;
@@ -57,10 +67,6 @@
         font: 15pt/1.6em Inter;
         margin: 24px auto;
         color: rgb(100, 100, 100);
-    } video {
-        width: 75%;
-        display: block;
-        margin: 36px auto 0 auto;
     } form {
         width: 100%;
         margin: 24px 0 132px 0;
@@ -81,11 +87,9 @@
         background: rgb(245, 245, 245);
         box-sizing: border-box;
         box-shadow:
-        0 1px 1px hsl(0deg 0% 0% / 0.075),
-        0 2px 2px hsl(0deg 0% 0% / 0.075),
-        0 4px 4px hsl(0deg 0% 0% / 0.075),
-        0 8px 8px hsl(0deg 0% 0% / 0.075),
-        0 16px 16px hsl(0deg 0% 0% / 0.075),
+        0 1px 1px hsl(0deg 0% 0% / 0.04),
+        0 2px 2px hsl(0deg 0% 0% / 0.04),
+        0 4px 4px hsl(0deg 0% 0% / 0.04);
     } textarea {
         min-height: 120px;
         resize: vertical;
@@ -94,8 +98,6 @@
         background: rgb(235, 235, 235);
     } .submit-button {
         margin-top: 8px;
-    } .active-button {
-        background: rgb(220, 220, 220);
     }
     
 </style>
@@ -104,16 +106,13 @@
 <body>
 <div id="page">
 
-<video autoplay loop muted>
-        <source src="video.mp4" type="video/mp4">
-</video>
-
-<div class="button-container">
-    <a href="index.html"><button>Home</button></a>
-    <a href="grid.html"><button>Grid</button></a>
-    <a href="contact.html"><button>Contact Me</button></a>
-    <a href="type.html"><button>Type</button></a>
-</div>
+<header>
+    <nav class="nav-links">
+        <a href="index.html" data-page="index.html">Home</a>
+        <a href="works.html" data-page="works.html">Works</a>
+        <a href="contact.html" data-page="contact.html">Contact</a>
+    </nav>
+</header>
 
 <h1>Get In <b>Touch</b></h1>
 
@@ -137,12 +136,12 @@
 
 <script>
     var currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    var buttons = document.querySelectorAll('.button-container a');
-    
-    for (var i = 0; i < buttons.length; i++) {
-        var href = buttons[i].getAttribute('href');
+    var links = document.querySelectorAll('.nav-links a');
+
+    for (var i = 0; i < links.length; i++) {
+        var href = links[i].getAttribute('data-page');
         if (href === currentPage) {
-            buttons[i].querySelector('button').classList.add('active-button');
+            links[i].classList.add('active-link');
         }
     }
 </script>

@@ -2,245 +2,243 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.75">
 <title>Day's Website</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 <style>
 
     body {
         background: rgb(252, 252, 252);
+        margin: 0;
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     } #page {
-        width: 50%;
-        max-width: 100%;
+        width: 70%;
+        max-width: 1120px;
         background: rgb(252, 252, 252);
         margin: 0 auto;
-    } .button-container {
+        padding: 0 40px 80px 40px;
+    } .nav-links {
+        display: inline-flex;
+        gap: 32px;
+        font: 11pt/1.4em Inter;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+    } .nav-links a {
+        text-decoration: none;
+        color: rgb(90, 90, 90);
+        padding-bottom: 4px;
+        border-bottom: 2px solid transparent;
+    } .nav-links a:hover {
+        border-bottom: 2px solid rgb(210, 210, 210);
+    } .active-link {
+        border-bottom: 2px solid rgb(210, 210, 210);
+    } .hero {
+        margin: 0 0 64px 0;
+        max-width: 540px;
+        padding: 0;
+    } .hero h1 {
+        font: 40pt/1.1em "Inter";
+        margin: 0 0 12px 0;
+        color: rgb(20, 20, 20);
+    } .hero span {
+        font-weight: 700;
+    } .hero-subtitle {
+        font: 15pt/1.6em Inter;
+        color: rgb(120, 120, 120);
+        margin: 0 0 28px 0;
+    } .hero-buttons {
         display: flex;
-        justify-content: center;
         gap: 16px;
-        margin: 32px 0;
+    } .hero-buttons a {
+        text-decoration: none;
     } button {
         border: none;
-        border-radius: 12px;
-        font: 15pt/1.6em Inter;
-        padding: 12px 24px;
+        border-radius: 8px;
+        font: 13pt/1.4em Inter;
+        padding: 10px 24px;
         margin: 0;
         color: rgb(50, 50, 50);
         background: rgb(245, 245, 245);
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: all 0.25s ease;
         box-shadow:
-        0 1px 1px hsl(0deg 0% 0% / 0.075),
-        0 2px 2px hsl(0deg 0% 0% / 0.075),
-        0 4px 4px hsl(0deg 0% 0% / 0.075),
-        0 8px 8px hsl(0deg 0% 0% / 0.075),
-        0 16px 16px hsl(0deg 0% 0% / 0.075),
+        0 1px 1px hsl(0deg 0% 0% / 0.04),
+        0 2px 2px hsl(0deg 0% 0% / 0.04),
+        0 4px 4px hsl(0deg 0% 0% / 0.04);
     } button:hover {
         background: rgb(235, 235, 235);
-        transform: scale(1.03);
-        transition: transform 0.5s;
-        box-shadow:
-        0 1px 1px hsl(0deg 0% 0% / 0.075),
-        0 2px 2px hsl(0deg 0% 0% / 0.075),
-        0 4px 4px hsl(0deg 0% 0% / 0.075),
-        0 8px 8px hsl(0deg 0% 0% / 0.075),
-        0 16px 16px hsl(0deg 0% 0% / 0.075),
-    } h1 {
-        font: 36pt/1.0em 'Inter';
-        text-align: left;
-        margin-bottom: 48px;
-    } h2 {
-        font: 24pt/1.0em 'Inter';
-        text-align: left;
-        color: rgb(85, 85, 85);
-        margin-top: -16px;
-        margin-bottom: 36px;
-    } p {
-        font: 15pt/1.6em Inter;
-        margin: 24px auto;
-        color: rgb(100, 100, 100);
-    } img {
-        border-radius: 12px;
-        box-shadow:
-        0 1px 1px hsl(0deg 0% 0% / 0.075),
-        0 2px 2px hsl(0deg 0% 0% / 0.075),
-        0 4px 4px hsl(0deg 0% 0% / 0.075),
-        0 8px 8px hsl(0deg 0% 0% / 0.075),
-        0 16px 16px hsl(0deg 0% 0% / 0.075),
-    } .portrait {
-        width: 50%;
-        object-fit: fill;
-        float: right;
-        margin: 0px 0px 36px 36px;
-    } video {
-        width: 75%;
-        display: block;
-        margin: 36px auto 0 auto;
-    } .grid {
-        width: 100%;
-        height: 248px;
-        object-fit: cover;
+        transform: translateY(-1px);
+    } .primary-button {
+        background: rgb(248, 220, 226);
+    } .primary-button:hover {
+        background: rgb(244, 208, 216);
+    } .section-label {
+        font: 10pt/1.4em Inter;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: rgb(150, 150, 150);
+        margin-bottom: 12px;
+    } .gallery-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 0 20px 0;
+        padding: 0;
+    } .gallery-link {
+        font: 11pt/1.4em Inter;
+        text-decoration: none;
+        color: rgb(150, 150, 150);
     } figure {
         width: 100%;
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 24px;
-        margin: 48px 0;
+        margin: 0 0 64px 0;
+        padding: 0;
     } figure div {
-        flex: 1 1 248px;
-        min-width: 248px;
+        width: 100%;
+    } figure div a {
+        text-decoration: none;
+        display: block;
     } figcaption {
         font: 12pt/1.6em Inter;
         color: rgb(140, 140, 140);
         padding: 8px 0;
-    } img, .zoom {
-        transition: transform 0.5s;
-    } .zoom {
-        background-size: 100%;
-        background-position: center;
-    } img:hover {
-        transform: scale(1.03);
-        transition: transform 0.5s;
-    } .zoom:hover {
-        background-size: 105%;
-        transition: background-size 0.5s;
-    } @keyframes pulse {
-        0% {
-            transform: scale(1) rotate(-2deg);
-        } 50% {
-            transform: scale(1.05) rotate(2deg);
-        } 100% {
-            transform: scale(1) rotate(-2deg);
-        }
-    } .get-in-touch {
-        background: #cddafd;
-        animation: pulse 2s ease infinite;
-    } .active-button {
-        background: rgb(220, 220, 220);
-    }
-    
-    @media (max-width: 750px) {
-        #page {
-            width: 100%;
-            padding: 0 20px;
-        }
-        
-        h1 {
-            font-size: 28pt;
-        }
-        
-        h2 {
-            font-size: 20pt;
-        }
-        
-        p {
-            font-size: 16pt;
-        }
-        
-        .portrait {
-            width: 100%;
-            float: none;
-            margin: 0 0 24px 0;
-        }
-        
-        video {
-            width: 100%;
-        }
-        
-        .grid {
-            width: 100%;
-        }
-        
-        figure div {
-            flex: 1 1 100%;
-            min-width: 100%;
+    } .grid {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow:
+        0 1px 1px hsl(0deg 0% 0% / 0.04),
+        0 2px 2px hsl(0deg 0% 0% / 0.04),
+        0 4px 4px hsl(0deg 0% 0% / 0.04);
+        transition: transform 0.3s ease;
+    } .grid:hover {
+        transform: scale(1.05);
+    } .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        align-items: start;
+        margin: 0 0 0 0;
+        padding: 0;
+    } .about h2 {
+        font: 20pt/1.3em Inter;
+        margin: 0 0 16px 0;
+        color: rgb(30, 30, 30);
+    } .about p {
+        font: 14pt/1.7em Inter;
+        color: rgb(120, 120, 120);
+        margin: 0 0 24px 0;
+    } .about ul {
+        padding-left: 18px;
+        margin: 0;
+        font: 14pt/1.7em Inter;
+        color: rgb(120, 120, 120);
+    } .about li {
+        margin-bottom: 4px;
+    } .about-image {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border-radius: 8px;
+        display: block;
+        object-fit: cover;
+        box-shadow:
+        0 1px 1px hsl(0deg 0% 0% / 0.04),
+        0 2px 2px hsl(0deg 0% 0% / 0.04),
+        0 4px 8px hsl(0deg 0% 0% / 0.04);
+    } .about-location {
+        font: 10pt/1.4em Inter;
+        color: rgb(150, 150, 150);
+        margin-top: 10px;
+    } header {
+        padding: 32px 0 64px 0;
+        text-align: center;
+        margin: 0;
+    } @media (max-width: 600px) {
+        .about-image {
+            aspect-ratio: 9 / 16;
+        } .about p {
+            font: 10pt/1.7em Inter;
+        } .about ul {
+            font: 10pt/1.7em Inter;
         }
     }
-    
+ 
 </style>
 </head>
 
 <body>
 <div id="page">
 
-<video autoplay loop muted>
-        <source src="video.mp4" type="video/mp4">
-</video>
+<header>
+    <nav class="nav-links">
+        <a href="index.html" data-page="index.html">Home</a>
+        <a href="works.html" data-page="works.html">Works</a>
+        <a href="contact.html" data-page="contact.html">Contact</a>
+    </nav>
+</header>
 
-<div class="button-container">
-    <a href="index.html"><button>Home</button></a>
-    <a href="grid.html"><button>Grid</button></a>
-    <a href="contact.html"><button>Contact Me</button></a>
-    <a href="type.html"><button>Type</button></a>
-</div>
+<section class="hero">
+    <h1>Hi, I'm <span>Day</span></h1>
+    <p class="hero-subtitle">and I make visuals that stand out.</p>
+    <div class="hero-buttons">
+        <a href="contact.html"><button class="primary-button">Let's Connect</button></a>
+        <a href="works.html"><button>View Work</button></a>
+    </div>
+</section>
 
-<h1>Hi, I'm <b>Day</b></h1>
-<p>
-    <img src="https://live.staticflickr.com/65535/54438995862_b13df2f6bf_c_d.jpg" class="portrait"/>
-    A designer and multidisciplinary visual artist from Las Vegas. I make stuff that looks good and works good. I have over eight years of personal experience in creating...
-</p>
-<p>
-    Fire visuals, including graphics and animations that people'll definitely remember.
-</p>
-<p>
-    Brand identities with custom logos, type and guidelines so your company is consistent plus recognizable.
-</p>
-<p>
-    Oh, and I design sites and apps, for companies, small businesses or anybody.
-</p>
-<p>
-    Let's get in touch at <a href="mailto:munard1@unlv.nevada.edu">munard1@unlv.nevada.edu.</a>
-</p>
-
-<div style="text-align: left; margin: 32px 0;">
-    <a href="contact.html"><button class="get-in-touch">Get in Touch</button></a>
+<div class="gallery-header">
+    <div class="section-label">Gallery</div>
+    <a href="works.html" class="gallery-link">View All</a>
 </div>
 
 <figure>
     <div>
-    <a href="https://live.staticflickr.com/65535/54448088140_4b9e13c179_b.jpg">
-    <img src="https://live.staticflickr.com/65535/54448088140_4b9e13c179.jpg" class="grid" />
-    </a>
-    <figcaption>
-        Corporate Website Redesign
-    </figcaption>
+        <a href="https://res.cloudinary.com/dsd6bjb9k/image/upload/t_800_thumb/XboxGreen_3_mkpu8w.png" target="_blank"><img src="https://res.cloudinary.com/dsd6bjb9k/image/upload/t_800_thumb/XboxGreen_3_mkpu8w.png" class="grid" /></a>
+        <figcaption>Xbox Sustainability Campaign &amp; Packaging</figcaption>
     </div>
-
     <div>
-    <a href="https://live.staticflickr.com/65535/54438718382_c1524bda7c_b.jpg">
-    <img src="https://live.staticflickr.com/65535/54438718382_c1524bda7c.jpg" class="grid" />
-    </a>
-    <figcaption>
-        McDonald's C.P.F.M Mystery Box
-    </figcaption>
+        <a href="https://res.cloudinary.com/dsd6bjb9k/image/upload/t_800_thumb/Prada_1_ujagjq.png" target="_blank"><img src="https://res.cloudinary.com/dsd6bjb9k/image/upload/t_800_thumb/Prada_1_ujagjq.png" class="grid" /></a>
+        <figcaption>Prada Branding Concept</figcaption>
     </div>
-
     <div>
-    <a href="https://live.staticflickr.com/65535/54439898315_85735e7237_b.jpg">
-    <img src="https://live.staticflickr.com/65535/54439898315_85735e7237.jpg" class="grid" />
-    </a>
-    <figcaption>
-        Tesla Annual Report
-    </figcaption>
+        <a href="https://live.staticflickr.com/65535/54438718382_c1524bda7c.jpg" target="_blank"><img src="https://live.staticflickr.com/65535/54438718382_c1524bda7c.jpg" class="grid" /></a>
+        <figcaption>McDonald's C.P.F.M Mystery Box</figcaption>
     </div>
-
     <div>
-    <a href="https://live.staticflickr.com/65535/54439572831_88722639d8_b.jpg">
-    <img src="https://live.staticflickr.com/65535/54439572831_88722639d8_b.jpg" class="grid" />
-    </a>
-    <figcaption>
-        The Cosmopolitan Billboard
-    </figcaption>
+        <a href="https://live.staticflickr.com/65535/54439572831_88722639d8_b.jpg" target="_blank"><img src="https://live.staticflickr.com/65535/54439572831_88722639d8_b.jpg" class="grid" /></a>
+        <figcaption>The Cosmopolitan Billboard &amp; Banner</figcaption>
     </div>
 </figure>
 
+<div class="gallery-header">
+    <div class="section-label">About Me</div>
+</div>
+
+<section class="about">
+    <div>
+        <p>I'm Day, a designer and multidisciplinary visual artist from Las Vegas. I make stuff that looks good and works good. Need a brand refresh, a website, or some clean visuals? Let's talk sometime.</p>
+        <ul>
+            <li>Fire visuals.</li>
+            <li>Brand Identities.</li>
+            <li>Oh, and websites.</li>
+        </ul>
+    </div>
+    <div>
+        <img src="https://live.staticflickr.com/65535/54438995862_b13df2f6bf_c_d.jpg" class="about-image" />
+    </div>
+</section>
+
 <script>
     var currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    var buttons = document.querySelectorAll('.button-container a');
-    
-    for (var i = 0; i < buttons.length; i++) {
-        var href = buttons[i].getAttribute('href');
+    var links = document.querySelectorAll('.nav-links a');
+
+    for (var i = 0; i < links.length; i++) {
+        var href = links[i].getAttribute('data-page');
         if (href === currentPage) {
-            buttons[i].querySelector('button').classList.add('active-button');
+            links[i].classList.add('active-link');
         }
     }
 </script>
